@@ -18,6 +18,8 @@
 		41E21FA61F31F97000DFA04A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E21FA51F31F97000DFA04A /* AccountViewController.swift */; };
 		41E21FAA1F31FEC000DFA04A /* VegatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E21FA81F31FEC000DFA04A /* VegatableCollectionViewCell.swift */; };
 		41E21FAB1F31FEC000DFA04A /* VegatableCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E21FA91F31FEC000DFA04A /* VegatableCollectionViewCell.xib */; };
+		41E21FB21F3217D400DFA04A /* FruitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E21FB01F3217D400DFA04A /* FruitCollectionViewCell.swift */; };
+		41E21FB31F3217D400DFA04A /* FruitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E21FB11F3217D400DFA04A /* FruitCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		41E21FA51F31F97000DFA04A /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		41E21FA81F31FEC000DFA04A /* VegatableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VegatableCollectionViewCell.swift; sourceTree = "<group>"; };
 		41E21FA91F31FEC000DFA04A /* VegatableCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VegatableCollectionViewCell.xib; sourceTree = "<group>"; };
+		41E21FB01F3217D400DFA04A /* FruitCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FruitCollectionViewCell.swift; sourceTree = "<group>"; };
+		41E21FB11F3217D400DFA04A /* FruitCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FruitCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,8 @@
 		41E21F831F31E57300DFA04A /* TolleyApp */ = {
 			isa = PBXGroup;
 			children = (
-				41E21FA71F31FE7A00DFA04A /* VegitableVollectionViewCell */,
+				41E21FAE1F32179000DFA04A /* FruitCollectionViewCell */,
+				41E21FA71F31FE7A00DFA04A /* VegitableCollectionViewCell */,
 				41E21FA01F31F93B00DFA04A /* CheckOut */,
 				41E21F9F1F31F92F00DFA04A /* History */,
 				41E21F9E1F31F92700DFA04A /* Account */,
@@ -121,13 +126,22 @@
 			name = CheckOut;
 			sourceTree = "<group>";
 		};
-		41E21FA71F31FE7A00DFA04A /* VegitableVollectionViewCell */ = {
+		41E21FA71F31FE7A00DFA04A /* VegitableCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				41E21FA81F31FEC000DFA04A /* VegatableCollectionViewCell.swift */,
 				41E21FA91F31FEC000DFA04A /* VegatableCollectionViewCell.xib */,
 			);
-			name = VegitableVollectionViewCell;
+			name = VegitableCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		41E21FAE1F32179000DFA04A /* FruitCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				41E21FB01F3217D400DFA04A /* FruitCollectionViewCell.swift */,
+				41E21FB11F3217D400DFA04A /* FruitCollectionViewCell.xib */,
+			);
+			name = FruitCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E21F911F31E57300DFA04A /* LaunchScreen.storyboard in Resources */,
+				41E21FB31F3217D400DFA04A /* FruitCollectionViewCell.xib in Resources */,
 				41E21F8E1F31E57300DFA04A /* Assets.xcassets in Resources */,
 				41E21FAB1F31FEC000DFA04A /* VegatableCollectionViewCell.xib in Resources */,
 				41E21F8C1F31E57300DFA04A /* Main.storyboard in Resources */,
@@ -204,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E21FA21F31F95100DFA04A /* CheckOutViewController.swift in Sources */,
+				41E21FB21F3217D400DFA04A /* FruitCollectionViewCell.swift in Sources */,
 				41E21F9D1F31F90700DFA04A /* SearchViewController.swift in Sources */,
 				41E21FAA1F31FEC000DFA04A /* VegatableCollectionViewCell.swift in Sources */,
 				41E21FA61F31F97000DFA04A /* AccountViewController.swift in Sources */,
