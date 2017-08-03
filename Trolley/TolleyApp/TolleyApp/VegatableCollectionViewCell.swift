@@ -11,6 +11,7 @@ import UIKit
 class VegatableCollectionViewCell: UICollectionViewCell {
     var count = 0
     @IBOutlet weak var countLable: UILabel!
+    @IBOutlet weak var backGroundView: UIView!
     @IBOutlet weak var hideView: UIView!
     @IBOutlet weak var vegImge: UIImageView!
     @IBOutlet weak var vegQantityLabel: UILabel!

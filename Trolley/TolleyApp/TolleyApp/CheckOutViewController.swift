@@ -8,8 +8,12 @@
 
 import UIKit
 
-class CheckOutViewController: UIViewController {
+class CheckOutViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var myTabelView: UITableView!
+   
+    @IBOutlet weak var pageTitleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +25,22 @@ class CheckOutViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func tollyButtonPressed(_ sender: UIButton) {
     }
-    */
-
+    @IBAction func didTapCheckOutButton(_ sender: UIButton) {
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Bundle.main.loadNibNamed("SearchItemTableViewCell", owner: self, options: nil)?.first as! SearchItemTableViewCell
+        cell.addSubView.layer.cornerRadius = 12
+        cell.addSubView.layer.borderWidth = 1
+        cell.countLabel.layer.borderWidth = 1
+        cell.backGroundView.layer.cornerRadius = 10
+        cell.backGroundView.layer.borderWidth = 1
+        cell.backGroundView.layer.borderColor = UIColor.gray.cgColor
+        
+        return cell
+    }
 }

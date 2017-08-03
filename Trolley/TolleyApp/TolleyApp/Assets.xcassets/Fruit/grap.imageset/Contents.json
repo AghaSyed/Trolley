@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "graa.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "menu-button-of-three-horizontal-lines.png",
       "scale" : "2x"
     },
     {

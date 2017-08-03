@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "carrot.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "menu-button-of-three-horizontal-lines.png",
       "scale" : "2x"
     },
     {
