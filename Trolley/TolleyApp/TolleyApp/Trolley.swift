@@ -12,7 +12,7 @@ import UIKit
 class Trolley: NSObject {
     static let shared = Trolley()
     var items = [ItemInfo]()
-    var price: Int!
+    var price: Int? = 0
     override init() {
        
     }

@@ -21,13 +21,12 @@ class AllItemsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
     @IBAction func addItemButton(_ sender: UIButton) {
         hideView.alpha = 0.7
         count = count + 1
         allCountLabel.text = "\(count)"
          Trolley.init().price = count
-        
+    
     }
     @IBAction func hideMinusButtonClicked(_ sender: UIButton) {
         count = count - 1
@@ -35,7 +34,7 @@ class AllItemsCollectionViewCell: UICollectionViewCell {
             hideView.alpha = 0
         } else {
             allCountLabel.text = "\(count)"
-             Trolley.init().price = count
+             Trolley.init().price = count 
         }
     }
     @IBAction func hideAddButtonClicked(_ sender: UIButton) {

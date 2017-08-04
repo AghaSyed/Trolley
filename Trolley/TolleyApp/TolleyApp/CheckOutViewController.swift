@@ -18,14 +18,14 @@ class CheckOutViewController: UIViewController, UITableViewDelegate, UITableView
     var allItemInfo = [ItemInfo]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        allItemInfo =   [ItemInfo(itemDetail: "Banana Banana", itemPrice: "3.5 AED", itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "banana")),
-                         ItemInfo(itemDetail: "appricot appricot", itemPrice: "4.5 AED", itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "appricot")),
-                         ItemInfo(itemDetail: "grap grap", itemPrice: "5.5 AED", itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "grap")),
-                         ItemInfo(itemDetail: "pear pear", itemPrice: "6.5 AED", itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "pear")),
-                         ItemInfo(itemDetail: "celiflower celiflower", itemPrice: "3.5 AED", itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "celiflower")),
-                         ItemInfo(itemDetail: "mixVeg mixVeg", itemPrice: "4.5 AED", itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "mixVeg")),
-                         ItemInfo(itemDetail: "carrot carrot", itemPrice: "5.5 AED", itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "carrot")),
-                         ItemInfo(itemDetail: "tomato tomato", itemPrice: "6.5 AED", itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "tomato"))]
+        allItemInfo =   [ItemInfo(itemDetail: "Banana Banana", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "banana")),
+                         ItemInfo(itemDetail: "appricot appricot", itemPrice: 4.5, itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "appricot")),
+                         ItemInfo(itemDetail: "grap grap", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "grap")),
+                         ItemInfo(itemDetail: "pear pear", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "pear")),
+                         ItemInfo(itemDetail: "celiflower celiflower", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "celiflower")),
+                         ItemInfo(itemDetail: "mixVeg mixVeg", itemPrice: 4.5, itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "mixVeg")),
+                         ItemInfo(itemDetail: "carrot carrot", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "carrot")),
+                         ItemInfo(itemDetail: "tomato tomato", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "tomato"))]
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +50,7 @@ class CheckOutViewController: UIViewController, UITableViewDelegate, UITableView
         cell.backGroundView.layer.borderColor = UIColor.gray.cgColor
         cell.detailLabel.text = allItemInfo[indexPath.row].itemDetail
         cell.itemImage.image = allItemInfo[indexPath.row].itemImage
-        cell.priceLabel.text = allItemInfo[indexPath.row].itemPrice
+        cell.priceLabel.text = "\(allItemInfo[indexPath.row].itemPrice!) AED"
         cell.weightLabel.text = allItemInfo[indexPath.row].itemQuantity
         return cell
     }

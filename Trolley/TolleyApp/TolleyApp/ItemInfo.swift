@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 struct ItemInfo {
     var itemDetail: String!
-    var itemPrice: String!
+    var itemPrice: Double!
     var itemQuantity: String!
     var itemImage: UIImage!
 }

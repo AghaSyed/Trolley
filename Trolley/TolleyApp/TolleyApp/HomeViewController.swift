@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
    
     
     // OutLets
+    @IBOutlet weak var trollyButton: UIButton!
     @IBOutlet weak var homeTotalPrice: UILabel!
     @IBOutlet weak var mySearchBar: UISearchBar!
     @IBOutlet weak var vegetableView: UIView!
@@ -35,24 +36,24 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
-        fruitInfo = [ItemInfo(itemDetail: "Banana Banana", itemPrice: "3.5 AED", itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "banana")),
-                    ItemInfo(itemDetail: "appricot appricot", itemPrice: "4.5 AED", itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "appricot")),
-                    ItemInfo(itemDetail: "grap grap", itemPrice: "5.5 AED", itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "grap")),
-                    ItemInfo(itemDetail: "pear pear", itemPrice: "6.5 AED", itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "pear"))]
+        fruitInfo = [ItemInfo(itemDetail: "Banana Banana", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "banana")),
+                    ItemInfo(itemDetail: "appricot appricot", itemPrice: 4.5 , itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "appricot")),
+                    ItemInfo(itemDetail: "grap grap", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "grap")),
+                    ItemInfo(itemDetail: "pear pear", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "pear"))]
      
-        vegetableInfo = [ItemInfo(itemDetail: "celiflower celiflower", itemPrice: "3.5 AED", itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "celiflower")),
-                         ItemInfo(itemDetail: "mixVeg mixVeg", itemPrice: "4.5 AED", itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "mixVeg")),
-                         ItemInfo(itemDetail: "carrot carrot", itemPrice: "5.5 AED", itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "carrot")),
-                         ItemInfo(itemDetail: "tomato tomato", itemPrice: "6.5 AED", itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "tomato"))]
+        vegetableInfo = [ItemInfo(itemDetail: "celiflower celiflower", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "celiflower")),
+                         ItemInfo(itemDetail: "mixVeg mixVeg", itemPrice: 4.5, itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "mixVeg")),
+                         ItemInfo(itemDetail: "carrot carrot", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "carrot")),
+                         ItemInfo(itemDetail: "tomato tomato", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "tomato"))]
        
-        allItemInfo =   [ItemInfo(itemDetail: "Banana Banana", itemPrice: "3.5 AED", itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "banana")),
-                         ItemInfo(itemDetail: "appricot appricot", itemPrice: "4.5 AED", itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "appricot")),
-                         ItemInfo(itemDetail: "grap grap", itemPrice: "5.5 AED", itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "grap")),
-                         ItemInfo(itemDetail: "pear pear", itemPrice: "6.5 AED", itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "pear")),
-                         ItemInfo(itemDetail: "celiflower celiflower", itemPrice: "3.5 AED", itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "celiflower")),
-                         ItemInfo(itemDetail: "mixVeg mixVeg", itemPrice: "4.5 AED", itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "mixVeg")),
-                         ItemInfo(itemDetail: "carrot carrot", itemPrice: "5.5 AED", itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "carrot")),
-                         ItemInfo(itemDetail: "tomato tomato", itemPrice: "6.5 AED", itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "tomato"))]
+        allItemInfo =   [ItemInfo(itemDetail: "Banana Banana", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "banana")),
+                         ItemInfo(itemDetail: "appricot appricot", itemPrice: 4.5, itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "appricot")),
+                         ItemInfo(itemDetail: "grap grap", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "grap")),
+                         ItemInfo(itemDetail: "pear pear", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "pear")),
+                         ItemInfo(itemDetail: "celiflower celiflower", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "celiflower")),
+                         ItemInfo(itemDetail: "mixVeg mixVeg", itemPrice: 4.5, itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "mixVeg")),
+                         ItemInfo(itemDetail: "carrot carrot", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "carrot")),
+                         ItemInfo(itemDetail: "tomato tomato", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "tomato"))]
 
    
     }
@@ -93,7 +94,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.myCollectionView.register(UINib(nibName: "FruitCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "fruitCollection")
             let cell : FruitCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "fruitCollection", for: indexPath) as! FruitCollectionViewCell
             cell.fruitImage.image = fruitInfo[indexPath.row].itemImage
-            cell.priceLabel.text =  fruitInfo[indexPath.row].itemPrice
+            cell.priceLabel.text =  "\(fruitInfo[indexPath.row].itemPrice!) AED"
             cell.fruitDetailLabel.text = fruitInfo[indexPath.row].itemDetail
             cell.fruitQuantityLabel.text = fruitInfo[indexPath.row].itemQuantity
             cell.layer.cornerRadius = 15
@@ -107,7 +108,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.myCollectionView.register(UINib(nibName: "VegatableCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "vegCollection")
             let cell : VegatableCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "vegCollection", for: indexPath) as! VegatableCollectionViewCell
             cell.vegImge.image = vegetableInfo[indexPath.row].itemImage
-            cell.vegPriceLabel.text = vegetableInfo[indexPath.row].itemPrice
+            cell.vegPriceLabel.text = "\(vegetableInfo[indexPath.row].itemPrice!) AED"
             cell.vegQantityLabel.text = vegetableInfo[indexPath.row].itemQuantity
             cell.detailVegLabel.text = vegetableInfo[indexPath.row].itemDetail
             cell.layer.borderColor = UIColor.gray.cgColor
@@ -122,7 +123,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             let cell : AllItemsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "allItemCollection", for: indexPath) as! AllItemsCollectionViewCell
             cell.allItemImage.image = allItemInfo[indexPath.row].itemImage
             cell.allDetailLabel.text = allItemInfo[indexPath.row].itemDetail
-            cell.allPriceLabel.text = allItemInfo[indexPath.row].itemPrice
+            cell.allPriceLabel.text = "\(allItemInfo[indexPath.row].itemPrice!) AED"
             cell.allQuantityLabel.text = allItemInfo[indexPath.row].itemQuantity
             cell.layer.cornerRadius = 15
             cell.layer.borderWidth = 1

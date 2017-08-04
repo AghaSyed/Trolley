@@ -591,6 +591,7 @@
                         <outlet property="homeTotalPrice" destination="ddV-hc-0gi" id="r5y-NE-T0g"/>
                         <outlet property="myCollectionView" destination="6ex-db-1fv" id="Jjh-yc-ogu"/>
                         <outlet property="mySearchBar" destination="RwE-9d-OhM" id="cIq-Z9-ayx"/>
+                        <outlet property="trollyButton" destination="62R-f0-5Ua" id="Dc4-LX-qDB"/>
                         <outlet property="vegetableButton" destination="9LV-Hv-UBw" id="jo5-RR-HhH"/>
                         <outlet property="vegetableView" destination="t7N-Wn-Sgb" id="mJr-qV-yJz"/>
                     </connections>
@@ -1061,7 +1062,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="097-Ni-TQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057.5" y="-808.5"/>
+            <point key="canvasLocation" x="380" y="-725"/>
         </scene>
     </scenes>
     <resources>
@@ -1072,6 +1073,6 @@
         <image name="home" width="12" height="12"/>
         <image name="menu" width="32" height="32"/>
         <image name="search" width="12" height="12"/>
-        <image name="trolly" width="24" height="24"/>
+        <image name="trolly" width="16" height="16"/>
     </resources>
 </document>
