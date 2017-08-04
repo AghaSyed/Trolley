@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var allItemButton: UIButton!
     @IBOutlet weak var myCollectionView: UICollectionView!
     // Declar Variables
-    var totalPrice = 0
+    var totalPrice = 0.0
     var fruitInfo = [ItemInfo]()
     var vegetableInfo = [ItemInfo]()
     var allItemInfo = [ItemInfo]()
@@ -103,6 +103,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             cell.priceLabel.layer.borderWidth = 1
             cell.priceLabel.layer.cornerRadius = 4
             cell.priceLabel.layer.borderColor = UIColor.gray.cgColor
+            cell.watchForClickHandler(completion: {index in
+                let clickedItemPrice = self.fruitInfo[indexPath.row].itemPrice
+                
+                if index == 0 {
+                    self.totalPrice += clickedItemPrice!
+                }else {
+                    self.totalPrice -= clickedItemPrice!
+                    if self.totalPrice < 0 {
+                        self.totalPrice = 0.0
+                    }
+                }
+                
+                self.homeTotalPrice.text = "\(self.totalPrice)"
+            })
             return cell
         } else if isVegetable == true {
             self.myCollectionView.register(UINib(nibName: "VegatableCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "vegCollection")
@@ -117,6 +131,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             cell.vegPriceLabel.layer.borderWidth = 1
             cell.vegPriceLabel.layer.cornerRadius = 4
             cell.vegPriceLabel.layer.borderColor = UIColor.gray.cgColor
+            cell.watchForClickHandler(completion: {index in
+                let clickedItemPrice = self.vegetableInfo[indexPath.row].itemPrice
+                
+                if index == 0 {
+                    self.totalPrice += clickedItemPrice!
+                }else {
+                    self.totalPrice -= clickedItemPrice!
+                    if self.totalPrice < 0 {
+                        self.totalPrice = 0.0
+                    }
+                }
+                
+                self.homeTotalPrice.text = "\(self.totalPrice)"
+            })
             return cell
         } else {
             self.myCollectionView.register(UINib(nibName: "AllItemsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "allItemCollection")
@@ -132,7 +160,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             cell.allPriceLabel.layer.cornerRadius = 4
             self.homeTotalPrice.text = "\(cell.count)"
             cell.allPriceLabel.layer.borderColor = UIColor.gray.cgColor
-            
+            cell.watchForClickHandler(completion: {index in
+                let clickedItemPrice = self.allItemInfo[indexPath.row].itemPrice
+                
+                if index == 0 {
+                    self.totalPrice += clickedItemPrice!
+                }else {
+                    self.totalPrice -= clickedItemPrice!
+                    if self.totalPrice < 0 {
+                        self.totalPrice = 0.0
+                    }
+                }
+                
+                self.homeTotalPrice.text = "\(self.totalPrice)"
+            })
             return cell
         }
     }

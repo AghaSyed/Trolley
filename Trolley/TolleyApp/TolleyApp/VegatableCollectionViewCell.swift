@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VegatableCollectionViewCell: UICollectionViewCell {
+class VegatableCollectionViewCell: ItemCollectionCell {
     var count = 0
     @IBOutlet weak var countLable: UILabel!
     @IBOutlet weak var backGroundView: UIView!
@@ -25,6 +25,8 @@ class VegatableCollectionViewCell: UICollectionViewCell {
         hideView.alpha = 0.7
         count = count + 1
         countLable.text = "\(count)"
+        guard let completion = self.clickHandler else {return}
+        completion(0)
     }
     @IBAction func didTapHideButton(_ sender: UIButton) {
         count = count - 1
@@ -33,12 +35,15 @@ class VegatableCollectionViewCell: UICollectionViewCell {
         } else {
             countLable.text = "\(count)"
         }
-        
+        guard let completion = self.clickHandler else {return}
+        completion(1)
         
     }
     @IBAction func didTapHideViewAddButton(_ sender: UIButton) {
         count = count + 1
         countLable.text = "\(count)"
+        guard let completion = self.clickHandler else {return}
+        completion(0)
     }
 
 }

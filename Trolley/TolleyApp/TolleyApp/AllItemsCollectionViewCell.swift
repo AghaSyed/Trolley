@@ -8,7 +8,15 @@
 
 import UIKit
 
-class AllItemsCollectionViewCell: UICollectionViewCell {
+
+class ItemCollectionCell: UICollectionViewCell {
+    var clickHandler: ((Int)->Void)?
+    func watchForClickHandler(completion: @escaping (Int)->Void) {
+        self.clickHandler = completion
+    }
+}
+
+class AllItemsCollectionViewCell: ItemCollectionCell {
     var count = 0
     @IBOutlet weak var addItem: UIButton!
     @IBOutlet weak var allCountLabel: UILabel!
@@ -19,14 +27,16 @@ class AllItemsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var allItemImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
     @IBAction func addItemButton(_ sender: UIButton) {
         hideView.alpha = 0.7
         count = count + 1
         allCountLabel.text = "\(count)"
-         Trolley.init().price = count
-    
+        Trolley.init().price = count
+        guard let completion = self.clickHandler else {return}
+        completion(0)
     }
     @IBAction func hideMinusButtonClicked(_ sender: UIButton) {
         count = count - 1
@@ -36,10 +46,14 @@ class AllItemsCollectionViewCell: UICollectionViewCell {
             allCountLabel.text = "\(count)"
              Trolley.init().price = count 
         }
+        guard let completion = self.clickHandler else {return}
+        completion(1)
     }
     @IBAction func hideAddButtonClicked(_ sender: UIButton) {
         count = count + 1
         allCountLabel.text = "\(count)"
          Trolley.init().price = count
+        guard let completion = self.clickHandler else {return}
+        completion(0)
     }
 }

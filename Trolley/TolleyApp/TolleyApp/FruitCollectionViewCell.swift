@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FruitCollectionViewCell: UICollectionViewCell {
+class FruitCollectionViewCell: ItemCollectionCell {
     @IBOutlet weak var backGroundView: UIView!
     @IBOutlet weak var fruitImage: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
@@ -25,6 +25,8 @@ class FruitCollectionViewCell: UICollectionViewCell {
     @IBAction func didTapHideViewAddButton(_ sender: UIButton) {
         count = count + 1
         countLabel.text = "\(count)"
+        guard let completion = self.clickHandler else {return}
+        completion(0)
     }
     @IBAction func didTapMinusButton(_ sender: UIButton) {
         count = count - 1
@@ -33,10 +35,14 @@ class FruitCollectionViewCell: UICollectionViewCell {
         } else {
             countLabel.text = "\(count)"
         }
+        guard let completion = self.clickHandler else {return}
+        completion(1)
     }
     @IBAction func didTapAddButton(_ sender: UIButton) {
         hideView.alpha = 0.7
         count = count + 1
         countLabel.text = "\(count)"
+        guard let completion = self.clickHandler else {return}
+        completion(0)
     }
 }
