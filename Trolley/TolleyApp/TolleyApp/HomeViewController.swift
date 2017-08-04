@@ -23,16 +23,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var fruitButton: UIButton!
     @IBOutlet weak var allItemButton: UIButton!
     @IBOutlet weak var myCollectionView: UICollectionView!
+    // Declar Variables
     var totalPrice = 0
     var fruitInfo = [ItemInfo]()
     var vegetableInfo = [ItemInfo]()
     var allItemInfo = [ItemInfo]()
-    // Declar Variables
     var isFruit = false
     var isVegetable = false
     var allItem = true
-    var vegetables = ["celiflower","mixVeg","carrot","tomato"]
-    var allItems = ["banana","appricot","grap","pear","celiflower","mixVeg","carrot","tomato"]
     override func viewDidLoad() {
         super.viewDidLoad()
         myCollectionView.delegate = self
@@ -70,9 +68,25 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         } else if isVegetable == true {
              return vegetableInfo.count
         } else {
-           return allItems.count
+           return allItemInfo.count
         }
         
+    }
+   /* func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        if isFruit == true {
+          
+          return true
+        } else if isVegetable == true {
+             return true
+        } else {
+            return true
+        }
+    }*/
+    override func viewWillAppear(_ animated: Bool) {
+        mySearchBar.resignFirstResponder()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        mySearchBar.resignFirstResponder()
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if isFruit == true {
@@ -115,10 +129,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             cell.layer.borderColor = UIColor.gray.cgColor
             cell.allPriceLabel.layer.borderWidth = 1
             cell.allPriceLabel.layer.cornerRadius = 4
+            self.homeTotalPrice.text = "\(cell.count)"
             cell.allPriceLabel.layer.borderColor = UIColor.gray.cgColor
+            
             return cell
         }
     }
+    
+  // Search Bar Fuctions
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -127,6 +145,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchProductViewController") as! SearchProductViewController
         self.navigationController?.pushViewController(secondViewController, animated: true)
+        mySearchBar.resignFirstResponder()
     }
     // Outlet Function
   

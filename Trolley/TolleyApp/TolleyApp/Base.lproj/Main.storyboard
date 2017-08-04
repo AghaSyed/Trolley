@@ -645,6 +645,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BUa-RP-jAB" id="eXE-k1-WF0"/>
+                                                </connections>
                                             </searchBar>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-Sx-u4T">
                                                 <rect key="frame" x="335" y="45" width="30" height="20"/>
@@ -765,6 +768,9 @@
                                                 </constraints>
                                                 <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="bxx-z3-hov"/>
+                                                </connections>
                                             </searchBar>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="55N-NZ-cG9">
                                                 <rect key="frame" x="335" y="45" width="30" height="20"/>
@@ -865,6 +871,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTZ-67-ef2">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Cart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AW4-XO-KPG">
+                                                <rect key="frame" x="60" y="10" width="255" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="VME-Ad-zTf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kD-A5-tCR">
                                                 <rect key="frame" x="335" y="10" width="30" height="30"/>
                                                 <constraints>
@@ -877,13 +892,14 @@
                                                     <action selector="tollyButtonPressed:" destination="2ba-DO-lZZ" eventType="touchUpInside" id="Ath-mL-sGg"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AW4-XO-KPG">
-                                                <rect key="frame" x="60" y="10" width="255" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="85U-sb-zFS">
+                                                <rect key="frame" x="330" y="42" width="40" height="15"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="VME-Ad-zTf"/>
+                                                    <constraint firstAttribute="width" constant="40" id="VSi-Lc-K99"/>
+                                                    <constraint firstAttribute="height" constant="15" id="tsj-1L-2Gf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -892,15 +908,17 @@
                                             <constraint firstItem="AW4-XO-KPG" firstAttribute="leading" secondItem="NTZ-67-ef2" secondAttribute="leading" constant="60" id="2SW-M6-MJN"/>
                                             <constraint firstItem="3kD-A5-tCR" firstAttribute="leading" secondItem="AW4-XO-KPG" secondAttribute="trailing" constant="20" id="Afi-CO-fRa"/>
                                             <constraint firstAttribute="trailing" secondItem="3kD-A5-tCR" secondAttribute="trailing" constant="10" id="FTb-jL-tR4"/>
+                                            <constraint firstAttribute="trailing" secondItem="85U-sb-zFS" secondAttribute="trailing" constant="5" id="GjZ-Wy-idZ"/>
                                             <constraint firstAttribute="height" constant="60" id="QlG-Ue-psO"/>
                                             <constraint firstItem="3kD-A5-tCR" firstAttribute="top" secondItem="NTZ-67-ef2" secondAttribute="top" constant="10" id="UvX-Cs-abZ"/>
                                             <constraint firstItem="AW4-XO-KPG" firstAttribute="top" secondItem="NTZ-67-ef2" secondAttribute="top" constant="10" id="ae5-d5-v4m"/>
+                                            <constraint firstItem="85U-sb-zFS" firstAttribute="top" secondItem="3kD-A5-tCR" secondAttribute="bottom" constant="2" id="nsx-TR-Ott"/>
                                         </constraints>
                                     </view>
                                     <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCk-cu-BJO">
                                         <rect key="frame" x="0.0" y="518" width="375" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09u-0b-6EL">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09u-0b-6EL">
                                                 <rect key="frame" x="20" y="2" width="335" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="lga-KB-FrO"/>
@@ -993,6 +1011,7 @@
                         <outlet property="myTabelView" destination="kY4-KW-vfT" id="3lX-t1-rG7"/>
                         <outlet property="pageTitleLabel" destination="AW4-XO-KPG" id="AgO-Mj-vMD"/>
                         <outlet property="totalPriceLabel" destination="09u-0b-6EL" id="JWZ-Si-u8I"/>
+                        <outlet property="totalPriceMenuBar" destination="85U-sb-zFS" id="yc3-pi-7fQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rm-cg-ewa" userLabel="First Responder" sceneMemberID="firstResponder"/>

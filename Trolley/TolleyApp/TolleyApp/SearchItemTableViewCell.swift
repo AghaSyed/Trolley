@@ -34,10 +34,13 @@ class SearchItemTableViewCell: UITableViewCell {
         } else {
             count = count - 1
             countLabel.text = "\(count)"
+            Trolley.init().price = count
+        
         }
     }
     @IBAction func didTapAddButton(_ sender: UIButton) {
         count = count + 1
         countLabel.text = "\(count)"
+         Trolley.init().price = count
     }
 }

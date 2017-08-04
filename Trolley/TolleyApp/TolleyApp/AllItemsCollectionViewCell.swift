@@ -26,6 +26,7 @@ class AllItemsCollectionViewCell: UICollectionViewCell {
         hideView.alpha = 0.7
         count = count + 1
         allCountLabel.text = "\(count)"
+         Trolley.init().price = count
         
     }
     @IBAction func hideMinusButtonClicked(_ sender: UIButton) {
@@ -34,10 +35,12 @@ class AllItemsCollectionViewCell: UICollectionViewCell {
             hideView.alpha = 0
         } else {
             allCountLabel.text = "\(count)"
+             Trolley.init().price = count
         }
     }
     @IBAction func hideAddButtonClicked(_ sender: UIButton) {
         count = count + 1
         allCountLabel.text = "\(count)"
+         Trolley.init().price = count
     }
 }
