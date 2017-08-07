@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 struct ItemInfo {
+    var itemId: String!
     var itemDetail: String!
     var itemPrice: Double!
     var itemQuantity: String!

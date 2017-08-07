@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+// singelton class
 class Trolley: NSObject {
     static let shared = Trolley()
     var items = [ItemInfo]()
@@ -16,5 +16,5 @@ class Trolley: NSObject {
     override init() {
        
     }
-   
+
    }

@@ -8,16 +8,11 @@
 
 import UIKit
 
-
-class ItemCollectionCell: UICollectionViewCell {
-    var clickHandler: ((Int)->Void)?
-    func watchForClickHandler(completion: @escaping (Int)->Void) {
-        self.clickHandler = completion
-    }
-}
-
-class AllItemsCollectionViewCell: ItemCollectionCell {
+class AllItemsCollectionViewCell: UICollectionViewCell {
     var count = 0
+    var clickHandler: ((Int)->Void)?
+    @IBOutlet var hideViewAddItemButton: UIButton!
+    @IBOutlet var subtractItemButton: UIButton!
     @IBOutlet weak var addItem: UIButton!
     @IBOutlet weak var allCountLabel: UILabel!
     @IBOutlet weak var hideView: UIView!
@@ -27,32 +22,19 @@ class AllItemsCollectionViewCell: ItemCollectionCell {
     @IBOutlet weak var allItemImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // Initialization code
+    }
+    func watchForClickHandler(completion: @escaping (Int)->Void) {
+        self.clickHandler = completion
     }
     @IBAction func addItemButton(_ sender: UIButton) {
-        hideView.alpha = 0.7
-        count = count + 1
-        allCountLabel.text = "\(count)"
-        Trolley.init().price = count
         guard let completion = self.clickHandler else {return}
         completion(0)
     }
     @IBAction func hideMinusButtonClicked(_ sender: UIButton) {
-        count = count - 1
-        if count == 0 {
-            hideView.alpha = 0
-        } else {
-            allCountLabel.text = "\(count)"
-             Trolley.init().price = count 
-        }
         guard let completion = self.clickHandler else {return}
         completion(1)
     }
     @IBAction func hideAddButtonClicked(_ sender: UIButton) {
-        count = count + 1
-        allCountLabel.text = "\(count)"
-         Trolley.init().price = count
         guard let completion = self.clickHandler else {return}
         completion(0)
     }

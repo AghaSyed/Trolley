@@ -36,24 +36,24 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
-        fruitInfo = [ItemInfo(itemDetail: "Banana Banana", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "banana")),
-                    ItemInfo(itemDetail: "appricot appricot", itemPrice: 4.5 , itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "appricot")),
-                    ItemInfo(itemDetail: "grap grap", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "grap")),
-                    ItemInfo(itemDetail: "pear pear", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "pear"))]
+        fruitInfo = [ItemInfo(itemId: "0001",itemDetail: "Banana Banana", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "banana")),
+                    ItemInfo(itemId: "0002", itemDetail: "appricot appricot", itemPrice: 4.5 , itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "appricot")),
+                    ItemInfo(itemId: "0003", itemDetail: "grap grap", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "grap")),
+                    ItemInfo( itemId: "0004", itemDetail: "pear pear", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "pear"))]
      
-        vegetableInfo = [ItemInfo(itemDetail: "celiflower celiflower", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "celiflower")),
-                         ItemInfo(itemDetail: "mixVeg mixVeg", itemPrice: 4.5, itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "mixVeg")),
-                         ItemInfo(itemDetail: "carrot carrot", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "carrot")),
-                         ItemInfo(itemDetail: "tomato tomato", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "tomato"))]
+        vegetableInfo = [ ItemInfo(itemId: "0011", itemDetail: "celiflower celiflower", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "celiflower")),
+                         ItemInfo(itemId: "0012", itemDetail: "mixVeg mixVeg", itemPrice: 4.5, itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "mixVeg")),
+                         ItemInfo(itemId: "0013", itemDetail: "carrot carrot", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "carrot")),
+                         ItemInfo(itemId: "0014", itemDetail: "tomato tomato", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "tomato"))]
        
-        allItemInfo =   [ItemInfo(itemDetail: "Banana Banana", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "banana")),
-                         ItemInfo(itemDetail: "appricot appricot", itemPrice: 4.5, itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "appricot")),
-                         ItemInfo(itemDetail: "grap grap", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "grap")),
-                         ItemInfo(itemDetail: "pear pear", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "pear")),
-                         ItemInfo(itemDetail: "celiflower celiflower", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "celiflower")),
-                         ItemInfo(itemDetail: "mixVeg mixVeg", itemPrice: 4.5, itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "mixVeg")),
-                         ItemInfo(itemDetail: "carrot carrot", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "carrot")),
-                         ItemInfo(itemDetail: "tomato tomato", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "tomato"))]
+        allItemInfo =   [ItemInfo(itemId: "0001",itemDetail: "Banana Banana", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "banana")),
+                         ItemInfo(itemId: "0002", itemDetail: "appricot appricot", itemPrice: 4.5 , itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "appricot")),
+                         ItemInfo(itemId: "0003", itemDetail: "grap grap", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "grap")),
+                         ItemInfo( itemId: "0004", itemDetail: "pear pear", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "pear")),
+                         ItemInfo(itemId: "0011", itemDetail: "celiflower celiflower", itemPrice: 3.5, itemQuantity: " 1 Kg", itemImage: #imageLiteral(resourceName: "celiflower")),
+                         ItemInfo(itemId: "0012", itemDetail: "mixVeg mixVeg", itemPrice: 4.5, itemQuantity: " 1.5 Kg", itemImage: #imageLiteral(resourceName: "mixVeg")),
+                         ItemInfo(itemId: "0013", itemDetail: "carrot carrot", itemPrice: 5.5, itemQuantity: " 2 Kg",itemImage: #imageLiteral(resourceName: "carrot")),
+                         ItemInfo(itemId: "0014", itemDetail: "tomato tomato", itemPrice: 6.5, itemQuantity: " 2.5 Kg",itemImage: #imageLiteral(resourceName: "tomato"))]
 
    
     }
@@ -89,20 +89,24 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewWillDisappear(_ animated: Bool) {
         mySearchBar.resignFirstResponder()
     }
+    func didTabButton(button: UIButton)  {
+        
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if isFruit == true {
-            self.myCollectionView.register(UINib(nibName: "FruitCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "fruitCollection")
-            let cell : FruitCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "fruitCollection", for: indexPath) as! FruitCollectionViewCell
-            cell.fruitImage.image = fruitInfo[indexPath.row].itemImage
-            cell.priceLabel.text =  "\(fruitInfo[indexPath.row].itemPrice!) AED"
-            cell.fruitDetailLabel.text = fruitInfo[indexPath.row].itemDetail
-            cell.fruitQuantityLabel.text = fruitInfo[indexPath.row].itemQuantity
+            self.myCollectionView.register(UINib(nibName: "AllItemsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "allItemCollection")
+            let cell : AllItemsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "allItemCollection", for: indexPath) as! AllItemsCollectionViewCell
+            
+            cell.allItemImage.image = fruitInfo[indexPath.row].itemImage
+            cell.allPriceLabel.text =  "\(fruitInfo[indexPath.row].itemPrice!) AED"
+            cell.allDetailLabel.text = fruitInfo[indexPath.row].itemDetail
+            cell.allQuantityLabel.text = fruitInfo[indexPath.row].itemQuantity
             cell.layer.cornerRadius = 15
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor.gray.cgColor
-            cell.priceLabel.layer.borderWidth = 1
-            cell.priceLabel.layer.cornerRadius = 4
-            cell.priceLabel.layer.borderColor = UIColor.gray.cgColor
+            cell.allPriceLabel.layer.borderWidth = 1
+            cell.allPriceLabel.layer.cornerRadius = 4
+            cell.allPriceLabel.layer.borderColor = UIColor.gray.cgColor
             cell.watchForClickHandler(completion: {index in
                 let clickedItemPrice = self.fruitInfo[indexPath.row].itemPrice
                 
@@ -119,18 +123,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             })
             return cell
         } else if isVegetable == true {
-            self.myCollectionView.register(UINib(nibName: "VegatableCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "vegCollection")
-            let cell : VegatableCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "vegCollection", for: indexPath) as! VegatableCollectionViewCell
-            cell.vegImge.image = vegetableInfo[indexPath.row].itemImage
-            cell.vegPriceLabel.text = "\(vegetableInfo[indexPath.row].itemPrice!) AED"
-            cell.vegQantityLabel.text = vegetableInfo[indexPath.row].itemQuantity
-            cell.detailVegLabel.text = vegetableInfo[indexPath.row].itemDetail
+            self.myCollectionView.register(UINib(nibName: "AllItemsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "allItemCollection")
+            let cell : AllItemsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "allItemCollection", for: indexPath) as! AllItemsCollectionViewCell
+            cell.allItemImage.image = vegetableInfo[indexPath.row].itemImage
+            cell.allPriceLabel.text = "\(vegetableInfo[indexPath.row].itemPrice!) AED"
+            cell.allQuantityLabel.text = vegetableInfo[indexPath.row].itemQuantity
+            cell.allDetailLabel.text = vegetableInfo[indexPath.row].itemDetail
             cell.layer.borderColor = UIColor.gray.cgColor
             cell.layer.cornerRadius = 15
             cell.layer.borderWidth = 1
-            cell.vegPriceLabel.layer.borderWidth = 1
-            cell.vegPriceLabel.layer.cornerRadius = 4
-            cell.vegPriceLabel.layer.borderColor = UIColor.gray.cgColor
+            cell.allPriceLabel.layer.borderWidth = 1
+            cell.allPriceLabel.layer.cornerRadius = 4
+            cell.allPriceLabel.layer.borderColor = UIColor.gray.cgColor
             cell.watchForClickHandler(completion: {index in
                 let clickedItemPrice = self.vegetableInfo[indexPath.row].itemPrice
                 
@@ -158,15 +162,24 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             cell.layer.borderColor = UIColor.gray.cgColor
             cell.allPriceLabel.layer.borderWidth = 1
             cell.allPriceLabel.layer.cornerRadius = 4
-            self.homeTotalPrice.text = "\(cell.count)"
             cell.allPriceLabel.layer.borderColor = UIColor.gray.cgColor
             cell.watchForClickHandler(completion: {index in
+            cell.addItem.tag = indexPath.row
+                self.didTabButton(button: cell.addItem)
                 let clickedItemPrice = self.allItemInfo[indexPath.row].itemPrice
-                
                 if index == 0 {
+                    cell.hideView.alpha = 0.7
                     self.totalPrice += clickedItemPrice!
+                    cell.count = cell.count + 1
+                    cell.allCountLabel.text = "\(cell.count)"
                 }else {
                     self.totalPrice -= clickedItemPrice!
+                    cell.count = cell.count - 1
+                    if cell.count < 1 {
+                       cell.hideView.alpha = 0  
+                    } else {
+                        cell.allCountLabel.text = "\(cell.count)"
+                    }
                     if self.totalPrice < 0 {
                         self.totalPrice = 0.0
                     }
@@ -184,6 +197,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
     }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SearchProductViewController") as! SearchProductViewController
         self.navigationController?.pushViewController(secondViewController, animated: true)
